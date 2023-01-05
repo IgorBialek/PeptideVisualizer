@@ -35,7 +35,8 @@ You can save these files by clicking "Save Svgs" and selecting destination folde
 Install PeptideVisualizer with pip
 
 ```bash
-  python -m venv env
+  python -m venv venv
+  venv\Scripts\activate
   pip install -r requirements.txt
 ```
     
