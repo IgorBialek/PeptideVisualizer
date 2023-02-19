@@ -12,15 +12,6 @@ from PySide6.QtWidgets import QMainWindow, QLabel, QWidget, QVBoxLayout, QGridLa
 from PySide6.QtCore import Qt
 from PySide6.QtSvgWidgets import QSvgWidget
 
-svg = open('./venv/Lib/site-packages/pikachu/smiles/smiles.py', "rt")
-data = svg.read()
-data = data.replace("'p', 's'", "'p', 's', 'Se'")
-svg.close()
-
-svg = open('./venv/Lib/site-packages/pikachu/smiles/smiles.py', "wt")
-svg.write(data)
-svg.close()
-
 acceptable_acids = "RHKDESTNQCUGPAVILMFYW"
 amino_acids_full = {"R": "Arginine", "H": "Histidine", "K": "Lysine", "D": "Aspartic Acid", "E": "Glutamic Acid",
                     "S": "Serine", "T": "Threonine", "N": "Asparagine", "Q": "Glutamine", "C": "Cysteine",
@@ -239,6 +230,9 @@ class MainWindow(QMainWindow):
         sequence = self.sequence.text()
 
         if sequence:
+
+            generate_structural_pattern(sequence)
+            generate_structural_pattern_with_highlights(sequence)
 
             try:
                 generate_structural_pattern(sequence)
