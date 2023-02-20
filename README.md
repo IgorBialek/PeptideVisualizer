@@ -41,7 +41,6 @@ Install PeptideVisualizer with pip
   python -m venv venv
   venv\Scripts\activate
   pip install -r requirements.txt
-  pip install -e git+https://github.com/IgorBialek/pikachu.git@main#egg=pikachu-chem
   python main.py
 ```
 
